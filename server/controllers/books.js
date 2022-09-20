@@ -1,4 +1,4 @@
-import BookServiceInstance from "../services/bookService";
+import BookServiceInstance from "../services/BookService.js";
 
 export const getBooks = (res , req) => {
     //logic 
