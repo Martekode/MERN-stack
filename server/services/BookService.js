@@ -41,7 +41,7 @@ class BookService {
     fireCreateBookQuery() {
         //loggic
         return new Promise((resolve,reject)=>{
-            this.con.query(this.createBookQuery, async function(err, result , field){
+            this.con.query(createBookQuery, async function(err, result , field){
                 if (err) throw err;
                 resolve(result);
             })
@@ -51,7 +51,7 @@ class BookService {
     fireUpdateBookQuery() {
         //loggic
         return new Promise((resolve, reject)=>{
-            this.con.query(this.updateBookQuery, async function(err,result,field){
+            this.con.query(updateBookQuery, async function(err,result,field){
                 if (err) throw err;
                 resolve(result);
             })
@@ -61,7 +61,7 @@ class BookService {
     fireDeleteBookQuery() {
         //loggic
         return new Promise((resolve, reject)=>{
-            this.con.query(this.deleteBookQuery, async function(err,result,field){
+            this.con.query(deleteBookQuery, async function(err,result,field){
                 if(err) throw err;
                 resolve(result);
             })
