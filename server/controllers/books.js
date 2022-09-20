@@ -7,18 +7,21 @@ export const getBooks = async (req, res) => {
     res.send(books);
 };
 
-export const getBook = (res , req) => {
+export const getBook = async (req , res) => {
+    //logic
+    const { id } = req.params;
+    let book = await BookServiceInstance.fireSingleBookQuery(id);
+    res.send(book);
+};
+
+export const createBook = (req , res) => {
     //logic
 };
 
-export const createBook = (res , req) => {
+export const deleteBook = (req , res) => {
     //logic
 };
 
-export const deleteBook = (res , req) => {
-    //logic
-};
-
-export const updateBook = (res , req) => {
+export const updateBook = (req , res) => {
     //logic
 };
