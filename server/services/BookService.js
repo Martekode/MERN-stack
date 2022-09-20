@@ -38,8 +38,18 @@ class BookService {
         })
     }
 
-    fireCreateBookQuery() {
+    fireCreateBookQuery(obj) {
         //loggic
+        const { 
+            book_name, 
+            author_name,
+            publisher,
+            page_count,
+            book_mark,
+            review
+            } = obj;
+
+        const createBookQuery = `INSERT INTO books_table (book_name, author_name, publisher, page_count, book_mark, review ) VALUES ('${book_name}' , '${author_name}' , '${publisher}' , ${page_count}, ${book_mark} , '${review}')`;
         return new Promise((resolve,reject)=>{
             this.con.query(createBookQuery, async function(err, result , field){
                 if (err) throw err;
