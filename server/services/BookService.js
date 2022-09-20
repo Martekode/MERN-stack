@@ -5,10 +5,6 @@ const Mysql = mysql;
 class BookService {
     static con;
     static allBooksQuery;
-    static singleBookQuery;
-    static createBookQuery;
-    static updateBookQuery;
-    static deleteBookQuery;
 
     constructor(){
         this.con = Mysql.createConnection({
@@ -25,25 +21,51 @@ class BookService {
         // we return a new promise to force the code to wait fro the result. 
         return new Promise((resolve,reject)=>{
             this.con.query(this.allBooksQuery,async function(err,result,field){
-                    resolve(result)
+                if (err) throw err;
+                resolve(result)
             });
         })
     }
 
-    fireSingleBookQuery() {
+    fireSingleBookQuery(id) {
         //loggic
+        const singleBookQuery = "SELECT * FROM books_table WHERE id = " + id;
+        return new Promise((resolve, reject) => {
+            this.con.query(singleBookQuery , async function(err,result,field){
+                if (err) throw err;
+                resolve(result);
+            })
+        })
     }
 
     fireCreateBookQuery() {
         //loggic
+        return new Promise((resolve,reject)=>{
+            this.con.query(this.createBookQuery, async function(err, result , field){
+                if (err) throw err;
+                resolve(result);
+            })
+        })
     }
 
     fireUpdateBookQuery() {
         //loggic
+        return new Promise((resolve, reject)=>{
+            this.con.query(this.updateBookQuery, async function(err,result,field){
+                if (err) throw err;
+                resolve(result);
+            })
+        })
     }
 
     fireDeleteBookQuery() {
         //loggic
+        return new Promise((resolve, reject)=>{
+            this.con.query(this.deleteBookQuery, async function(err,result,field){
+                if(err) throw err;
+                resolve(result);
+            })
+        });
     }
 }
 
