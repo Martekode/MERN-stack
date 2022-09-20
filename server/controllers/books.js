@@ -1,9 +1,5 @@
-import { v4 as uuidv4 } from 'uuid';
-
-let books = [];
-
 export const getBooks = (res , req) => {
-    //logic
+    //logic 
 };
 
 export const getBook = (res , req) => {
