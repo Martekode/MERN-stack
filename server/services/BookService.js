@@ -17,18 +17,17 @@ class BookService {
             password : "Becode6-05",
             database : "bookDB"
         });
+        this.allBooksQuery = "SELECT * FROM books_table";
     }
 
-    connect() {
-        // throzs error when connection error occurs
-        this.con.connect(function (err) {
-            if (err) throw err;
-            console.log("connected to the database");
+
+    async fireAllBooksQuery() {
+        // we return a new promise to force the code to wait fro the result. 
+        return new Promise((resolve,reject)=>{
+            this.con.query(this.allBooksQuery,async function(err,result,field){
+                    resolve(result)
+            });
         })
-    }
-
-    fireAllBooksQuery() {
-        //loggic
     }
 
     fireSingleBookQuery() {
