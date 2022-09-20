@@ -15,8 +15,8 @@ export const getBook = async (req , res) => {
 };
 
 export const createBook = (req , res) => {
-    const obj = req.body;
-    BookServiceInstance.fireCreateBookQuery(obj);
+    const { body } = req;
+    BookServiceInstance.fireCreateBookQuery(body);
     res.send("Bookd created successfully");
     //logic
 };
