@@ -18,7 +18,5 @@ app.use('/api/books', booksRoutes);
 // later to be stored in env variables
 const PORT = process.env.PORT || 8080;
 
-BookServiceInstance.connect();
-
 app.listen(PORT , ()=> console.log("listening on port " + PORT));
 
