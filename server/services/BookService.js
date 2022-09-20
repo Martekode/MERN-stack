@@ -17,7 +17,7 @@ class BookService {
     }
 
 
-    async fireAllBooksQuery() {
+    fireAllBooksQuery() {
         // we return a new promise to force the code to wait fro the result. 
         return new Promise((resolve,reject)=>{
             this.con.query(this.allBooksQuery,async function(err,result,field){
