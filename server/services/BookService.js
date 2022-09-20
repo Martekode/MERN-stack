@@ -4,7 +4,12 @@ const Mysql = mysql;
 
 class BookService {
     static con;
-    
+    static allBooksQuery;
+    static singleBookQuery;
+    static createBookQuery;
+    static updateBookQuery;
+    static deleteBookQuery;
+
     constructor(){
         this.con = Mysql.createConnection({
             host: "localhost",
@@ -20,6 +25,26 @@ class BookService {
             if (err) throw err;
             console.log("connected to the database");
         })
+    }
+
+    fireAllBooksQuery() {
+        //loggic
+    }
+
+    fireSingleBookQuery() {
+        //loggic
+    }
+
+    fireCreateBookQuery() {
+        //loggic
+    }
+
+    fireUpdateBookQuery() {
+        //loggic
+    }
+
+    fireDeleteBookQuery() {
+        //loggic
     }
 }
 
